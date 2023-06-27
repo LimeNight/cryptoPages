@@ -365,8 +365,6 @@ const blockChainAnimate = () => {
   renderer.render(scene, camera);
 };
 const rotateCamera = () => {
-  // Define the rotation speed and angles
- // Adjust this value to control the rotation speed
   const rotationX = 0; // Rotation around the X-axis
   const rotationY = 1; // Rotation around the Y-axis
   const rotationZ = 0.01; // Rotation around the Z-axis
@@ -400,7 +398,7 @@ const addDragScroll = () => {
   });
 
   banner.addEventListener("mouseleave", function () {
-    if (search.value === ''){
+    if (search.value === '' && isInViewport(banner)){
       startAnimation();
     }
     isScrolling = false;
@@ -434,9 +432,11 @@ const autoStartStop = () => {
   let visible = isInViewport(banner)
   if (changed === visible){
     if (visible){
+      banner.addEventListener("mouseover", stopAnimation);
       startAnimation()
       changed = !changed
     }else {
+      banner.removeEventListener("mouseover", stopAnimation);
       stopAnimation()
       changed = !changed
     }
