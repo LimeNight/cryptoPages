@@ -1,5 +1,14 @@
 @import url('./root.css');
 
+#advantegesSection{
+    background-image: url('https://trendingpics.com/media/images/ori/2022/12/17/an-interesting-photo-of-a-gold-bitcoin-against-a-navy-blue-motherboard-for-a-crypto-desktop-background-5679831671290605.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 100px 0;
+}
+
 .adv{
     margin: 50px auto;
     background-color: var(--sub-bg-color);
