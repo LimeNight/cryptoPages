@@ -1,0 +1,47 @@
+@import url('./root.css');
+
+.side-menu{
+    position: relative;
+    width: 100%;
+    background-color: var(--sub-bg-color);
+    border-radius: 0 20px 20px 0;
+}
+
+.side-menu>ul{
+    margin: 0;
+    width: 100%;
+    list-style-type: none;
+    padding-left: 15px;
+    padding-top: 20px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+.side-menu>ul>li{
+    padding: 10px;
+}
+
+.side-menu>ul>li>a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.articles{
+    padding: 0 30px;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+.articles>div>h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.articles>div>div>p{
+    margin-bottom: 20px;
+}
+
+.articles>div{
+    margin-bottom: 60px;
+}
