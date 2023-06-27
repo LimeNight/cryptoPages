@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script src="./main.js"></script>
+</head>
+
+<body onload="init()">
+    <header>
+
+        <nav class="navbar">
+            <div class="container-fluid">
+
+                <a class="navbar-brand d-none d-sm-flex" href="#">
+                    <i class="fa-brands fa-bitcoin fa-7x" id="nav-brand-icon"></i>
+                </a>
+
+                <button class="d-block d-md-none toggler" onclick="menuToggler()">
+                    <i class="fa-solid fa-bars fa-2x"></i>
+                </button>
+
+                <div id="navbarNav" class="d-none d-md-flex show">
+                    <ul class="navbar-nav flex-col flex-md-row">
+                        <li class="nav-item"><a href="#">Home</a></li>
+                        <li class="nav-item"><a href="#">Market</a></li>
+                        <li class="nav-item"><a href="#">About</a></li>
+                        <li class="nav-item"><a href="#">Help</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-18"></div>
+                <div class="col col-sm-12 col-md-6">
+                    <div class="search">
+                        <input id="searchInput" type="text" name="search" placeholder="search in cryptos">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col">
+                    <ul id="crypto-banner">
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col" id="crypto-details">
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col col-md-12 rounded-2 block-chain-text">
+                    <h1>Blockchain</h1>
+                    <p>
+                        A blockchain is a distributed ledger with growing lists of records (blocks) that are securely
+                        linked together via cryptographic hashes.[1][2][3][4] Each block contains a cryptographic hash
+                        of the previous block, a timestamp, and transaction data (generally represented as a Merkle
+                        tree, where data nodes are represented by leaves). Since each block contains information about
+                        the previous block, they effectively form a chain (compare linked list data structure), with
+                        each additional block linking to the ones before it. Consequently, blockchain transactions are
+                        irreversible in that, once they are recorded, the data in any given block cannot be altered
+                        retroactively without altering all subsequent blocks.
+                    </p>
+                </div>
+                <div class="col col-md-12 block-chain-canvas">
+                    <canvas id="myCanvas"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col col-md-12 adv">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">
+                                    Advantages
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    1. Easy Transactions
+                                </td>
+                                <td>
+                                    Cryptocurrency transactions are simpler, cheaper, and more secure than most other types of transactions which is one of the main advantages of crypto. Everyone can transfer and receive several cryptocurrencies using a basic smartphone application, hardware wallets, or exchange wallets.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2. Incredible Security</td>
+                                <td>Decentralized cryptocurrencies usually make for secure methods of payment since they are dependent on cryptography and blockchain technology which is among the important benefits of crypto.
+
+                                    Hash rate is a key factor in cryptography security. The greater the hash rate, the more computer power is required to breach the network. Bitcoin has the greatest hash rate of any network, making it the most protected cryptocurrency.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3. Short Settlement Times and Low Fees
+                                </td>
+                                <td>
+                                    While some investors are primarily interested in the potential price growth of cryptocurrencies, others may see value in the technology's potential application as a medium of exchange.
+
+                                    Transaction fees for bitcoin and ether can range from pennies to dollars or maybe more, among the benefits of cryptocurrency trading. Many crypto transactions are completed in a matter of seconds or minutes. Bank wire transfers typically take three to five working days and might be much more expensive.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4. Exponential Industry Growth
+                                </td>
+                                <td>
+                                    The cryptocurrency market has had quick growth since its inception. According to a new study, it has been estimated that the cryptocurrency market will reach nearly $4.94 billion by 2030. Thus, the industry has the potential for exponential growth in the coming years. It is one of the major benefits of investing in cryptocurrency.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5. Outsized Returns
+                                </td>
+                                <td>
+                                    It is no surprise that over the past 12 years, Bitcoin has outperformed all other assets. Almost no value existed when Bitcoin started in 2009, and it has increased over the years to tens of thousands of dollars. It represents gains in the millions of percentage points and is one of the benefits of staking crypto. In contrast, the average annual return on the S&P 500 stock index is roughly 8%.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    6. More Private Transactions
+                                </td>
+                                <td>
+                                    One advantage of cryptocurrency is privacy; however, it's not as private as some people might imagine. With blockchain technology, all transactions are permanently recorded in a public ledger. Although this ledger displays wallet addresses, monitoring transactions is still feasible if a user's identity can be linked to a particular wallet.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    7. Portfolio Diversification
+                                </td>
+                                <td>
+                                    The asset class of cryptocurrencies is currently recognized as being uncorrelated. Cryptocurrency markets operate mainly autonomously, and the direction of their price movement is frequently influenced by variables different from those that influence equities, bonds, and commodities. It is among the advantages of investing in cryptocurrency.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    8. Inflation Hedge
+                                </td>
+                                <td>
+                                    Another of the benefits of using cryptocurrency is that the limited quantity of mineable cryptocurrencies like Bitcoin, Litecoin, and Monero, to mention a few, are ideal inflation hedges. Things becoming more scarce tend to increase in value since monetary inflation can happen when government agencies and central banks produce more money, thereby raising the supply.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    9. Cross-Border Payments
+                                </td>
+                                <td>
+                                    National boundaries are irrelevant to cryptocurrencies which is a significant advantage of a cryptocurrency over traditional currency. Without any additional difficulties, a person in one nation can send coins to a person in another nation. Transferring money across international borders can be time-consuming and expensive with conventional financial institutions. Due to rules, penalties, or conflicts between particular nations, doing so may not even be feasible in some circumstances.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    10. Transaction Speed
+                                </td>
+                                <td>
+                                    One of the significant benefits of cryptocurrency investment is that crypto transactions can be finished in a matter of a few minutes, unlike conventional transactions that settle in between three and five days or even wire transfers, which typically take at least 24 hours. The funds are ready for usage in crypto transactions after the network has approved the block containing your transaction.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col col-md-12 adv">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">
+                                    Disadvantages
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    1. Illegal Transactions
+                                </td>
+                                <td>
+                                    Since cryptocurrency transactions are highly private and secure, it is challenging for the authorities to hunt down any person through their wallet address or maintain surveillance of their data. Bitcoin has historically been used to exchange money during many unlawful transactions, such as purchasing narcotics on the dark web and thus being one of the greatest disadvantages of cryptocurrency. Many people have also utilized it to transfer their illegally obtained money through a legitimate middleman to conceal the source.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2. Risk of Data Loss
+                                </td>
+                                <td>
+                                    The designers sought to create impenetrable authentication processes, virtually undetectable ASCII documents, and robust hacking defenses. Positioning money in cryptocurrency rather than actual cash or bank vaults would make it more secure. However, if a user misplaces their wallet's private key, there is no way to recover it, which is among the major disadvantages of crypto. The number of coins within the wallet will also stay kept away.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3. The Power Lies in a Few Hands
+                                </td>
+                                <td>
+                                    Although cryptocurrencies are renowned for their decentralized nature, some currencies' market flow and supply are nonetheless regulated by their developers and certain organizations. These holders can manipulate the coin to cause significant price movements. Even highly traded coins like Bitcoin, whose value more than doubled, are susceptible to these tricks, which is one of the major drawbacks of blockchain.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4. Buying NFTs with Other Tokens
+                                </td>
+                                <td>
+                                    Only one or a few fiat currencies can be used to exchange some cryptocurrencies. It necessitates the user to first change these cryptocurrencies into one of the more popular ones, such as Bitcoin or Ethereum, before exchanging that money for the one they want. It may only apply to some cryptocurrencies. This adds additional transaction costs to the technique and results in unneeded expenditures.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5. No Refund or Cancellation
+                                </td>
+                                <td>
+                                    The coin cannot be returned to the sender in cases where there is a disagreement between the parties involved or when money is inadvertently sent to the incorrect wallet address. Many people might use it to defraud others for their money. There are no reimbursements; thus, it is simple to fabricate one for a transaction where the goods or services were never delivered. It is one of the significant disadvantages of staking crypto.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    6. High Consumption of Energy
+                                </td>
+                                <td>
+                                    It takes a lot of computer power and electricity to mine bitcoins, making it a very energy-intensive process. Bitcoin is frequently the biggest offender here. Advanced computing power and a lot of energy are needed for bitcoin mining. It cannot be done with standard computers. Significant Bitcoin miners are located in nations like China, where coal is used to generate electricity. China's carbon footprint has greatly expanded as a result.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    7. Vulnerable to Hacks
+                                </td>
+                                <td>
+                                    Cryptocurrencies are quite safe, but trades do not appear to be. Many exchanges keep track of users' wallet information to determine their user ID. Hackers frequently steal this data, granting them access to numerous accounts. It is one of the major disadvantages of investing in cryptocurrency.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    8. Decentralized but Still Operated by Some Organization
+                                </td>
+                                <td>
+                                    The decentralized nature of cryptocurrency is well-known. However, some currencies' issuers and some organizations continue to have control over the circulation and stock of some of these currencies. The fact that these holders have the power to control the coin's price with significant fluctuations is among the other drawbacks of cryptocurrency.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    9. Some Coins are not Available in Other Fiat Currencies
+                                </td>
+                                <td>
+                                    Only a single or a small amount of traditional money can be used to trade certain cryptos. This compels the consumer to first exchange these currencies into a significant currency, such as Bitcoin or Ethereum, and then utilize other exchanges to change that currency to their preferred one. Quite a few cryptocurrencies are affected by this.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    10. Adverse Effects of mining on the environment
+                                </td>
+                                <td>
+                                    Cryptocurrency mining is a highly energy-intensive process that demands a significant amount of computational power and electrical input. The most energy-hungry cryptocurrency is Bitcoin, which requires state-of-the-art computers and a considerable amount of energy, rendering it inaccessible to most computers. China is a hub for Bitcoin mining, utilizing coal-generated electricity which greatly contributes to the country's carbon footprint.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="footer-menu">
+                    <li>
+                        <a href="#">Market</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Help</a>
+                    </li>
+                    <li>
+                        <a href="#">Policy</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-12">
+                <ul class="footer-menu">
+                    <li>
+                        <a href="#">API</a>
+                    </li>
+                    <li>
+                        <a href="#">Documentation</a>
+                    </li>
+                    <li>
+                        <a href="#">Examples</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

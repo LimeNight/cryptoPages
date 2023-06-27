@@ -1,0 +1,44 @@
+@import url('./root.css');
+
+#crypto-banner{
+    display: flex;
+    position: relative;
+    list-style-type: none;
+    align-items: center;
+    justify-content: start;
+    flex-flow: row;
+    gap: 40px;
+    background-color: var(--sub-bg-color);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 0 8px var(--sub-bg-color);
+    overflow: hidden;
+    height: 140px;
+}
+
+.crypto-banner-icon{
+    min-width: 100px;
+}
+
+.crypto-banner-icon>button{
+    height: inherit;
+    width: 100%;
+    background-color: transparent;
+    border: transparent;
+}
+
+.crypto-banner-icon>button>img{
+    position: absolute;
+    top: 20px;
+    height: 100px;
+    aspect-ratio: 1;
+    clip-path: circle(60%);
+    cursor: pointer;
+    filter: drop-shadow(0 0 3px var(--text-color));
+    transition: filter 200ms, clip-path 200ms;
+}
+
+.crypto-banner-icon>button>img:hover{
+    clip-path: circle(80%);
+    filter: drop-shadow(0 0 10px var(--text-color));
+}

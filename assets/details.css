@@ -1,0 +1,47 @@
+@import url('./root.css');
+
+.detail-title{
+    font-size: 3em;
+}
+
+#crypto-details{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background-color: var(--sub-bg-color);
+    box-shadow: 0 0 8px var(--sub-bg-color);
+    border-radius: 25px;
+    color: var(--text-color);
+    padding: 0 0 25px;
+    overflow: clip;
+}
+
+#crypto-details>table{
+    width: 80%;
+    text-align: start;
+    text-indent: 15px;
+    border-collapse: collapse;
+}
+
+#crypto-details>table>tbody tr{
+    font-size: 1.3em;
+    border-bottom: 2px solid var(--text-color);
+}
+
+.close{
+    width: 100%;
+    text-align: end;
+}
+
+.close>button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px 15px 0 0;
+}
+
+.close>button>i{
+    color: var(--text-color);
+}

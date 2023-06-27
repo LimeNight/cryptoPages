@@ -1,0 +1,60 @@
+@import url('./root.css');
+
+.adv{
+    margin: 50px auto;
+    background-color: var(--sub-bg-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow:inset 0 0 5px var(--btc-color), 0 0 8px var(--sub-bg-color);
+}
+
+.adv>table{
+    border-collapse: collapse;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.adv>table>thead>tr>th{
+    text-align: center;
+    font-size: 2.2em;
+    border-bottom: 2px solid var(--btc-color);
+}
+
+.adv>table>tbody>tr>td{
+    vertical-align: top;
+    padding: 10px;
+}
+
+.adv>table>tbody>tr>td:first-child{
+    position: relative;
+    border-right: 2px solid var(--btc-color);
+    min-width: 20%;
+}
+
+.adv>table>tbody>tr>td:first-child::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    transform: translateX(25px);
+    height: 2px;
+    background-color: var(--btc-color);
+}
+
+.adv>table>tbody>tr>td:last-child{
+    position: relative;
+    text-align: justify;
+}
+
+.adv>table>tbody>tr>td:last-child::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    width: 50px;
+    border-bottom: 2px solid var(--btc-color);
+    border-right: 2px solid var(--btc-color);
+}

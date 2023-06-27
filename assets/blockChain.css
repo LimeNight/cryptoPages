@@ -1,0 +1,18 @@
+@import url('./root.css');
+
+.block-chain-text{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    background-color: var(--sub-bg-color);
+    border-radius: 25px;
+    padding: 50px 20px;
+    color: var(--text-color);
+    box-shadow: 0 0 8px var(--sub-bg-color);
+}
+
+.block-chain-canvas{
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0 0 5px var(--sub-bg-color));
+}

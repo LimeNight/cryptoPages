@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
+
+:root{
+    --text-color: #e1e4e5;
+    --link-color: #f0ae54;
+    --btc-color: rgb(242, 169, 0);
+    --btn-color: #d2402c;
+    --main-bg-color: #365658;
+    --sub-bg-color: #081b1a;
+
+    --main-font: 'Belanosima', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--main-font);
+}
+
+body{
+    background-color: var(--main-bg-color);
+}
