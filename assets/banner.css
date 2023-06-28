@@ -17,11 +17,14 @@
 }
 
 .crypto-banner-icon{
+    width: 100px;
     min-width: 100px;
+    height: 100px;
+    min-height: 100px;
 }
 
 .crypto-banner-icon>button{
-    height: inherit;
+    height: 100%;
     width: 100%;
     background-color: transparent;
     border: transparent;
