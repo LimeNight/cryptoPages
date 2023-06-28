@@ -1,0 +1,5 @@
+.dark{
+    background-color: var(--main-bg-color) !important;
+    color: var(--text-color) !important;
+    color-scheme: dark !important;
+}

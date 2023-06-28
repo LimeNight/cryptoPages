@@ -126,7 +126,10 @@ let navbarNav,
   scene,
   camera,
   focalPoint,
-  canvas;
+  canvas,
+  themeChange,
+  body,
+  ball;
 
 let cryptoList = [btc, eth, pol, doge, inch, ada, lite, mana, bnb];
 let frameRate = 1;
@@ -137,6 +140,9 @@ let changed = false;
 const init = () => {
   navbarNav = document.getElementById("navbarNav");
   canvas = document.getElementById("myCanvas");
+  themeChange = document.getElementById("themeChange");
+  body = document.querySelector("body");
+  ball = document.getElementById("ball");
 
   banner = document.getElementById("crypto-banner");
   addIcons(cryptoList);
@@ -145,10 +151,11 @@ const init = () => {
   search = document.getElementById("searchInput");
   search.value = "";
 
+  themeChange.addEventListener('click', changeTheme)
   search.addEventListener("input", searchCrypto);
   canvas.addEventListener("mouseover", stopRotation)
   canvas.addEventListener("mouseleave", startRotation)
-  window.addEventListener('scroll', autoStartStop)
+  document.addEventListener('scroll', autoStartStop)
   createRects();
   animate();
   drawBlockChain();
@@ -440,5 +447,15 @@ const autoStartStop = () => {
       stopAnimation()
       changed = !changed
     }
+  }
+}
+const changeTheme = () => {
+  let isDark = body.classList.toggle('dark')
+  if (isDark){
+    ball.style.right = 'unset'
+    ball.style.left = '0px'
+  }else{
+    ball.style.left = 'unset'
+    ball.style.right = '0px'
   }
 }

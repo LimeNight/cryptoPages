@@ -5,8 +5,8 @@
     --link-color: #f0ae54;
     --btc-color: rgb(242, 169, 0);
     --btn-color: #d2402c;
-    --main-bg-color: #365658;
-    --sub-bg-color: #081b1a;
+    --main-bg-color: #081b1a;
+    --sub-bg-color: #365658;
 
     --main-font: 'Belanosima', sans-serif;
 }
@@ -18,6 +18,15 @@
     font-family: var(--main-font);
 }
 
+html{
+    color-scheme: light;
+}
+
 body{
-    background-color: var(--main-bg-color);
+    color: var(--main-bg-color);
+    background-color: var(--text-color);
+}
+
+a{
+    color: inherit;
 }
