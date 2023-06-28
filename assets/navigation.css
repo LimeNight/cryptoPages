@@ -5,7 +5,7 @@
     min-height: 70px;
     padding: 10px 0;
     margin-bottom: 80px;
-    box-shadow: 0 0 8px var(--sub-bg-color);
+    border-bottom: 1px solid var(--sub-bg-color);
 }
 
 .navbar>div{
@@ -40,8 +40,8 @@
     content: '';
     position: absolute;
     bottom: -10px;
-    left: 0;
-    width: 100%;
+    left: -25px;
+    width: calc(100% + 50px);
     height: 0.1em;
     background-color: var(--btc-color);
     opacity: 0;
@@ -58,7 +58,6 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    margin-left: auto;
     margin-right: 20px;
     height: 50px;
 }
@@ -71,13 +70,26 @@
 }
 
 .show{
-    flex-basis: 100% !important;
+    flex-basis: auto !important;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .show{
-        flex-basis: auto !important;
+        flex-basis: 100% !important;
     }
+}
+
+#mobileNavTitle{
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-self: center;
+    font-size: 1.5em;
+}
+
+#mobileNavTitle>a{
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 #themeChange{

@@ -1,0 +1,30 @@
+#bgImage{
+    position: relative;
+    background-image: url('https://trendingpics.com/media/images/ori/2022/12/17/an-interesting-photo-of-a-gold-bitcoin-against-a-navy-blue-motherboard-for-a-crypto-desktop-background-5679831671290605.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: -100px;
+    margin: 100px 0;
+    height: 50vh;
+}
+
+#bgImage>div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#bgImage>div>h2{
+    padding: 60px 10px; 
+    font-size: 3.5em;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(20px) opacity(90%);
+    outline: 1px solid var(--btc-color);
+    outline-offset: 5px;
+    text-shadow: 0 0 8px black;
+    color: var(--text-color);
+}

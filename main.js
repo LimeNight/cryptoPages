@@ -157,7 +157,7 @@ const init = () => {
   canvas.addEventListener("mouseleave", startRotation)
   document.addEventListener('scroll', autoStartStop)
   createRects();
-  animate();
+  if (isInViewport(banner)) animate()
   drawBlockChain();
   blockChainAnimate();
   addDragScroll();
@@ -225,7 +225,7 @@ const animate = () => {
     rect.left -= frameRate;
     if (rect.left + rect.width <= 0) {
       const lastRect = rects[rects.length - 1];
-      rect.left = lastRect.left + lastRect.width + 50;
+      rect.left = lastRect.left + lastRect.width + 40;
       bannerItems = bannerItems.slice(1, l);
       bannerItems.push(item);
       rects = rects.slice(1, l);
@@ -259,7 +259,7 @@ const searchCrypto = () => {
     addIcons(i);
   }
 };
-const createIcon = (crypto) => {
+const createIcon = (crypto, index) => {
   let li = document.createElement("li");
   let btn = document.createElement("button");
   let img = document.createElement("img");
@@ -268,6 +268,9 @@ const createIcon = (crypto) => {
   btn.onclick = function () {
     showDetails(this);
   };
+  img.style.position = 'absolute'
+  img.style.left = 20 + index * (100 + 40) + 'px'
+  img.style.top = 20
   img.src = crypto?.img;
   img.alt = crypto?.name;
   btn.append(img);
@@ -275,7 +278,7 @@ const createIcon = (crypto) => {
   return li;
 };
 const addIcons = (list) => {
-  let icons = list.map((item) => createIcon(item));
+  let icons = list.map((item, index) => createIcon(item , index));
   while (icons.length > 0) {
     let { selectedIcon, rndIndex } = randomPick(icons);
     banner.appendChild(selectedIcon);
@@ -398,7 +401,6 @@ const addDragScroll = () => {
   banner.addEventListener("mouseover", stopAnimation);
 
   banner.addEventListener("mousedown", function (event) {
-    stopAnimation();
     isScrolling = true;
     startX = event.pageX - banner.offsetLeft;
     scrollLeft = banner.scrollLeft;
