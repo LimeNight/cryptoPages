@@ -119,7 +119,7 @@ let navbarNav,
   banner,
   rects,
   detailContainer,
-  animationId,
+  bannerAnimationId,
   search,
   context,
   renderer,
@@ -143,8 +143,8 @@ const init = () => {
   themeChange = document.getElementById("themeChange");
   body = document.querySelector("body");
   ball = document.getElementById("ball");
-
   banner = document.getElementById("crypto-banner");
+  
   addIcons(cryptoList);
   bannerItems = [...banner.getElementsByTagName("img")];
   detailContainer = document.getElementById("crypto-details");
@@ -233,13 +233,13 @@ const animate = () => {
     }
     item.style.left = rect.left + "px";
   }
-  animationId = requestAnimationFrame(animate);
+  bannerAnimationId = requestAnimationFrame(animate);
 };
 const startAnimation = () => {
-  animationId = requestAnimationFrame(animate);
+  bannerAnimationId = requestAnimationFrame(animate);
 };
 const stopAnimation = () => {
-  cancelAnimationFrame(animationId);
+  cancelAnimationFrame(bannerAnimationId);
 };
 const searchCrypto = () => {
   let inputValue = search.value.toUpperCase();
@@ -371,7 +371,7 @@ const drawBlockChain = () => {
 };
 const blockChainAnimate = () => {
   requestAnimationFrame(blockChainAnimate);
-  rotateCamera();
+  if (isInViewport(canvas)) rotateCamera();
   renderer.render(scene, camera);
 };
 const rotateCamera = () => {
