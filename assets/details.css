@@ -23,7 +23,7 @@
 
 #crypto-details>table>tbody tr{
     font-size: 1.3em;
-    border-bottom: 2px solid inherit;
+    border-bottom: 2px solid var(--sub-bg-color);
 }
 
 .close{
