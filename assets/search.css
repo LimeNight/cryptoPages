@@ -1,5 +1,3 @@
-@import url('./root.css');
-
 .search {
     display: flex;
     justify-content: end;
@@ -9,10 +7,8 @@
     width: 100%;
     height: 35px;
     border-radius: 5px;
-    background-color: var(--main-bg-color);
     text-indent: 5px;
-    border: 2px solid var(--sub-bg-color);
-    color: var(--text-color);
+    border-width: 2px;
     accent-color: var(--btc-color);
     font-size: larger;
     box-shadow: inset 0 0 5px var(--sub-bg-color);
