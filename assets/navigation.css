@@ -9,7 +9,7 @@
     user-select: none;
 }
 
-.navbar>div{
+#navContainer{
     flex-wrap: inherit;
 }
 
@@ -112,13 +112,13 @@
     border-radius: 50%;
 }
 
-#themeChange>span+span{
+.theme-change-icon{
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
 
-#themeChange>span>i{
+.theme-change-icon>i{
     display: flex;
     text-align: center;
     justify-content: center;

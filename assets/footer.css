@@ -1,4 +1,4 @@
-footer>.row{
+#about{
     margin: 0;
     padding: 20px;
 }
@@ -7,6 +7,6 @@ footer>.row{
     list-style-type: none;
 }
 
-.footer-menu>li>a{
+.footer-menu-item>a{
     text-decoration: none;
 }

@@ -100,8 +100,8 @@ const mana = {
   TV: 7442450.5,
   MCR: 11,
   MC: 82637173.15,
-  img: "https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@1a63530be6e374711a8554f31b17e4cb92c25fa5/svg/black/mana.svg"
-}
+  img: "https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@1a63530be6e374711a8554f31b17e4cb92c25fa5/svg/black/mana.svg",
+};
 const bnb = {
   symbol: "BNB",
   name: "Binance",
@@ -113,8 +113,8 @@ const bnb = {
   TV: 8442456.5,
   MCR: 3,
   MC: 131531351.15,
-  img: "https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@1a63530be6e374711a8554f31b17e4cb92c25fa5/svg/black/bnb.svg"
-}
+  img: "https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@1a63530be6e374711a8554f31b17e4cb92c25fa5/svg/black/bnb.svg",
+};
 let navbarNav,
   banner,
   rects,
@@ -143,21 +143,21 @@ const init = () => {
   themeChange = document.getElementById("themeChange");
   body = document.querySelector("body");
   ball = document.getElementById("ball");
-  banner = document.getElementById("crypto-banner");
-  
+  banner = document.getElementById("cryptoBanner");
+
   addIcons(cryptoList);
   bannerItems = [...banner.getElementsByTagName("img")];
-  detailContainer = document.getElementById("crypto-details");
+  detailContainer = document.getElementById("cryptoDetails");
   search = document.getElementById("searchInput");
   search.value = "";
 
-  themeChange.addEventListener('click', changeTheme)
+  themeChange.addEventListener("click", changeTheme);
   search.addEventListener("input", searchCrypto);
-  canvas.addEventListener("mouseover", stopRotation)
-  canvas.addEventListener("mouseleave", startRotation)
-  document.addEventListener('scroll', autoStartStop)
+  canvas.addEventListener("mouseover", stopRotation);
+  canvas.addEventListener("mouseleave", startRotation);
+  document.addEventListener("scroll", autoStartStop);
   createRects();
-  if (isInViewport(banner)) animate()
+  if (isInViewport(banner)) animate();
   drawBlockChain();
   blockChainAnimate();
   addDragScroll();
@@ -182,37 +182,44 @@ const closeDetails = () => {
   detailContainer.classList.remove("scale-in-center");
 };
 const createDetailCard = (crypto) => {
-  let card =
-    '<div class="close"><button onclick="closeDetails()"><i class="fa-solid fa-xmark fa-2x"></i></button></div>';
-  card += `<h2 class="detail-title">${crypto?.name}</h2>`;
-  card += "<table><tbody>";
+  let { name, price, tfLow, tfHeigh, sDayLow, sDayHeig, TV, MCR, MC } = crypto;
+
+  tfLow = tfLow.toLocaleString("en-US");
+  tfHeigh = tfHeigh.toLocaleString("en-US");
+  sDayLow = sDayLow.toLocaleString("en-US");
+  sDayHeig = sDayHeig.toLocaleString("en-US");
+  TV = TV.toLocaleString("en-US");
+  MC = MC.toLocaleString("en-US");
+
+  let card = '<div class="close-header">';
+  card += '<button class="close-btn" onclick="closeDetails()">';
+  card += '<i class="fa-solid fa-xmark fa-2x">';
+  card += "</i></button></div>";
+  card += `<h2 id="detailTitle">${name}</h2>`;
+  card += "<table id='cryptoDetailsTable'><tbody>";
   card += "<tr>";
   card += "<td>Price<td>";
-  card += `<td>$ ${crypto?.price}</td>`;
+  card += `<td>$ ${price}</td>`;
   card += "</tr>";
   card += "<tr>";
   card += "<td>24h Low / 24h High<td>";
-  card += `<td>$ ${crypto?.tfLow.toLocaleString(
-    "en-US"
-  )} / $ ${crypto?.tfHeigh.toLocaleString("en-US")}</td>`;
+  card += `<td>$ ${tfLow} / $ ${tfHeigh}</td>`;
   card += "</tr>";
   card += "<tr>";
   card += "<td>7d Low / 7d High<td>";
-  card += `<td>$ ${crypto?.sDayLow.toLocaleString(
-    "en-US"
-  )} / $ ${crypto?.sDayHeig.toLocaleString("en-US")}</td>`;
+  card += `<td>$ ${sDayLow} / $ ${sDayHeig}</td>`;
   card += "</tr>";
   card += "<tr>";
   card += "<td>Trading Volume<td>";
-  card += `<td>$ ${crypto?.TV.toLocaleString("en-US")}</td>`;
+  card += `<td>$ ${TV}</td>`;
   card += "</tr>";
   card += "<tr>";
   card += "<td>Market Cap Rank<td>";
-  card += `<td># ${crypto?.MCR}</td>`;
+  card += `<td># ${MCR}</td>`;
   card += "</tr>";
   card += "<tr>";
   card += "<td>Market Cap<td>";
-  card += `<td>$ ${crypto?.MC.toLocaleString("en-US")}</td>`;
+  card += `<td>$ ${MC}</td>`;
   card += "</tr>";
   card += "</tbody></table>";
   return card;
@@ -256,7 +263,7 @@ const searchCrypto = () => {
     stopAnimation();
     banner.innerHTML = "";
     let i = cryptoList.filter((x) => x.name.toUpperCase().includes(inputValue));
-    createRects()
+    createRects();
     addIcons(i);
   }
 };
@@ -269,9 +276,10 @@ const createIcon = (crypto, index) => {
   btn.onclick = function () {
     showDetails(this);
   };
-  img.style.position = 'absolute'
-  img.style.left = 20 + index * (100 + 40) + 'px'
-  img.style.top = 20
+  img.classList.add("crypto-banner-img")
+  img.style.position = "absolute";
+  img.style.left = 20 + index * (100 + 40) + "px";
+  img.style.top = 20;
   img.src = crypto?.img;
   img.alt = crypto?.name;
   btn.append(img);
@@ -279,7 +287,7 @@ const createIcon = (crypto, index) => {
   return li;
 };
 const addIcons = (list) => {
-  let icons = list.map((item, index) => createIcon(item , index));
+  let icons = list.map((item, index) => createIcon(item, index));
   while (icons.length > 0) {
     let { selectedIcon, rndIndex } = randomPick(icons);
     banner.appendChild(selectedIcon);
@@ -408,7 +416,7 @@ const addDragScroll = () => {
   });
 
   banner.addEventListener("mouseleave", function () {
-    if (search.value === '' && isInViewport(banner)){
+    if (search.value === "" && isInViewport(banner)) {
       startAnimation();
     }
     isScrolling = false;
@@ -426,50 +434,51 @@ const addDragScroll = () => {
     banner.scrollLeft = scrollLeft - walk;
   });
 };
-const stopRotation = () => rotationSpeed = 0
-const startRotation = () => rotationSpeed = 0.01
+const stopRotation = () => (rotationSpeed = 0);
+const startRotation = () => (rotationSpeed = 0.01);
 const isInViewport = (el) => {
   const rectangle = el.getBoundingClientRect();
   return (
-      rectangle.top >= 0 &&
-      rectangle.left >= 0 &&
-      rectangle.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rectangle.right <= (window.innerWidth || document.documentElement.clientWidth)
-
+    rectangle.top >= 0 &&
+    rectangle.left >= 0 &&
+    rectangle.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rectangle.right <=
+      (window.innerWidth || document.documentElement.clientWidth)
   );
-}
+};
 const autoStartStop = () => {
-  let visible = isInViewport(banner)
-  if (changed === visible){
-    if (visible){
+  let visible = isInViewport(banner);
+  if (changed === visible) {
+    if (visible) {
       banner.addEventListener("mouseover", stopAnimation);
-      startAnimation()
-      changed = !changed
-    }else {
+      startAnimation();
+      changed = !changed;
+    } else {
       banner.removeEventListener("mouseover", stopAnimation);
-      stopAnimation()
-      changed = !changed
+      stopAnimation();
+      changed = !changed;
     }
   }
-}
+};
 const changeTheme = () => {
-  let isDark = body.classList.toggle('dark')
-  if (isDark){
-    localStorage.setItem('theme', 'dark')
-    ball.style.right = 'unset'
-    ball.style.left = '0px'
-  }else{
-    localStorage.setItem('theme', 'light')
-    ball.style.left = 'unset'
-    ball.style.right = '0px'
+  let isDark = body.classList.toggle("dark");
+  if (isDark) {
+    localStorage.setItem("theme", "dark");
+    ball.style.right = "unset";
+    ball.style.left = "0px";
+  } else {
+    localStorage.setItem("theme", "light");
+    ball.style.left = "unset";
+    ball.style.right = "0px";
   }
-}
-const themeControl = () =>{
-  let theme = localStorage.getItem('theme')
-  theme ?? localStorage.setItem('theme', 'dark')
-  if (theme === 'light') {
-    body.classList.toggle('dark')
-    ball.style.left = 'unset'
-    ball.style.right = '0px'
+};
+const themeControl = () => {
+  let theme = localStorage.getItem("theme");
+  theme ?? localStorage.setItem("theme", "dark");
+  if (theme === "light") {
+    body.classList.toggle("dark");
+    ball.style.left = "unset";
+    ball.style.right = "0px";
   }
-}
+};

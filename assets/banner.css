@@ -1,4 +1,4 @@
-#crypto-banner{
+#cryptoBanner{
     display: flex;
     position: relative;
     list-style-type: none;
@@ -30,7 +30,7 @@
     border: transparent;
 }
 
-.crypto-banner-icon>button>img{
+.crypto-banner-img{
     position: absolute;
     top: 20px;
     height: 100px;
@@ -40,6 +40,6 @@
     transition: filter 200ms, clip-path 200ms;
 }
 
-.crypto-banner-icon>button>img:hover{
+.crypto-banner-img:hover{
     filter: drop-shadow(0 0 10px var(--sub-bg-color));
 }

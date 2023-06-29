@@ -5,7 +5,7 @@
     border-radius: 0 20px 20px 0;
 }
 
-.side-menu>ul{
+#sideMenuList{
     margin: 0;
     width: 100%;
     list-style-type: none;
@@ -15,28 +15,28 @@
     top: 0;
 }
 
-.side-menu>ul>li{
+.side-menu-item{
     padding: 10px;
 }
 
-.side-menu>ul>li>a{
+.side-menu-item>a{
     text-decoration: none;
 }
 
-.articles{
+.articles-container{
     padding: 0 30px;
     text-align: justify;
 }
 
-.articles>div>h2{
+.article-title{
     text-align: center;
     margin-bottom: 15px;
 }
 
-.articles>div>div>p{
+.article-text-container>p{
     margin-bottom: 20px;
 }
 
-.articles>div{
+.article{
     margin-bottom: 60px;
 }

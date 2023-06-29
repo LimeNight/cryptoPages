@@ -1,4 +1,4 @@
-#bgImage{
+#bgImageContainer{
     position: relative;
     background-image: url('https://trendingpics.com/media/images/ori/2022/12/17/an-interesting-photo-of-a-gold-bitcoin-against-a-navy-blue-motherboard-for-a-crypto-desktop-background-5679831671290605.jpg');
     background-repeat: no-repeat;
@@ -10,14 +10,14 @@
     height: 50vh;
 }
 
-#bgImage>div{
+#bgImage{
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-#bgImage>div>h2{
+.bg-image-text{
     padding: 60px 10px; 
     font-size: 3.5em;
     width: 100%;

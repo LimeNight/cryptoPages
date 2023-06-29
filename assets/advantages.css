@@ -6,30 +6,30 @@
     box-shadow: 0 0 8px var(--sub-bg-color);
 }
 
-.adv>table{
+.adv-table{
     border-collapse: collapse;
     width: 100%;
     word-wrap: break-word;
 }
 
-.adv>table>thead>tr>th{
+.adv-title{
     text-align: center;
     font-size: 2.2em;
     border-bottom: 2px solid var(--btc-color);
 }
 
-.adv>table>tbody>tr>td{
+.adv-body>tr>td{
     vertical-align: top;
     padding: 10px;
 }
 
-.adv>table>tbody>tr>td:first-child{
+.adv-body>tr>td:first-child{
     position: relative;
     border-right: 2px solid var(--btc-color);
     min-width: 20%;
 }
 
-.adv>table>tbody>tr>td:first-child::after{
+.adv-body>tr>td:first-child::after{
     content: '';
     position: absolute;
     right: 0;
@@ -40,12 +40,12 @@
     background-color: var(--btc-color);
 }
 
-.adv>table>tbody>tr>td:last-child{
+.adv-body>tr>td:last-child{
     position: relative;
     text-align: justify;
 }
 
-.adv>table>tbody>tr>td:last-child::after{
+.adv-body>tr>td:last-child::after{
     content: '';
     position: absolute;
     right: 0;

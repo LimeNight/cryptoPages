@@ -15,9 +15,8 @@
 
 <body onload="init()" class="dark">
     <header>
-
         <nav class="navbar">
-            <div class="container-fluid">
+            <div class="container-fluid" id="navContainer">
 
                 <a class="navbar-brand d-none d-sm-flex" href="#">
                     <i class="fa-brands fa-bitcoin fa-7x" id="navBrandIcon"></i>
@@ -34,16 +33,16 @@
                 <div id="navbarNav" class="d-none d-md-flex show">
                     <ul class="navbar-nav flex-col flex-md-row">
                         <li class="nav-item"><a href="#">Home</a></li>
-                        <li class="nav-item"><a href="#">Market</a></li>
-                        <li class="nav-item"><a href="#">About</a></li>
-                        <li class="nav-item"><a href="#">Help</a></li>
+                        <li class="nav-item"><a href="#blockChain">BlockChain</a></li>
+                        <li class="nav-item"><a href="#market">Market</a></li>
+                        <li class="nav-item"><a href="#about">About</a></li>
                         <li class="nav-item">
                             <button id="themeChange">
                                 <span id="ball"></span>
-                                <span>
+                                <span class="theme-change-icon">
                                     <i class="fa-solid fa-sun"></i>
                                 </span>
-                                <span>
+                                <span class="theme-change-icon">
                                     <i class="fa-solid fa-moon"></i>
                                 </span>
                             </button>
@@ -53,14 +52,13 @@
 
             </div>
         </nav>
-
     </header>
 
     <main>
 
-        <section class="container-fluid" id="bgImage">
-            <div>
-                <h2>Invest today lose tomorrow.</h2>
+        <section class="container-fluid" id="bgImageContainer">
+            <div id="bgImage">
+                <h2 class="bg-image-text">Invest today lose tomorrow.</h2>
             </div>
         </section>
 
@@ -76,22 +74,22 @@
         </section>
 
         <section class="container">
+
             <div class="row">
                 <div class="col">
-                    <ul id="crypto-banner">
+                    <ul id="cryptoBanner">
                     </ul>
                 </div>
             </div>
-        </section>
 
-        <section class="container">
             <div class="row">
-                <div class="col" id="crypto-details">
+                <div class="col" id="cryptoDetails">
                 </div>
             </div>
+
         </section>
 
-        <section class="container">
+        <section class="container" id="blockChain">
             <div class="row">
 
                 <div class="col col-md-12 rounded-2 block-chain-text">
@@ -115,20 +113,20 @@
             </div>
         </section>
 
-        <section class="container-fluid" id="advantegesSection">
+        <section class="container-fluid" id="advantages">
             <div class="container">
                 <div class="row">
     
                     <div class="col col-md-12 adv">
-                        <table>
+                        <table class="adv-table">
                             <thead>
                                 <tr>
-                                    <th colspan="2">
+                                    <th class="adv-title" colspan="2">
                                         Advantages
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="adv-body">
                                 <tr>
                                     <td>
                                         1. Easy Transactions
@@ -254,15 +252,15 @@
                     </div>
     
                     <div class="col col-md-12 adv">
-                        <table>
+                        <table class="adv-table">
                             <thead>
                                 <tr>
-                                    <th colspan="2">
+                                    <th class="adv-title" colspan="2">
                                         Disadvantages
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="adv-body">
                                 <tr>
                                     <td>
                                         1. Illegal Transactions
@@ -397,42 +395,42 @@
             </div>
         </section>
 
-        <section class="container-fluid">
+        <section class="container-fluid" id="market">
             <div class="row">
 
                 <aside class="d-none d-md-block col-md-6 side-menu">
-                    <ul>
-                        <li>
+                    <ul id="sideMenuList">
+                        <li class="side-menu-item">
                             <a href="#Whatistrading?">What is trading?</a>
                         </li>
-                        <li>
+                        <li class="side-menu-item">
                             <a href="#Whatisinvesting?">What is investing?</a>
                         </li>
-                        <li>
+                        <li class="side-menu-item">
                             <a href="#Tradingvs.investing">Trading vs. investing – what’s the difference?</a>
                         </li>
-                        <li>
+                        <li class="side-menu-item">
                             <a href="#Whatisfundamental">What is fundamental analysis (FA)?</a>
                         </li>
-                        <li>
+                        <li class="side-menu-item">
                             <a href="#Whatistechnicalanalysis">What is technical analysis (TA)?</a>
                         </li>
-                        <li>
+                        <li class="side-menu-item">
                             <a href="#Whatdrivesthefinancialmarkets?">What drives the financial markets?</a>
                         </li>
-                        <li>
+                        <li class="side-menu-item">
                             <a href="#Whatisamarkettrend?">What is a market trend?</a>
                         </li>
-                        <li>
+                        <li class="side-menu-item">
                             <a href="#Whatisamarketcycle?">What is a market cycle?</a>
                         </li>
                     </ul>
                 </aside>
 
-                <article class="col col-md-18 articles">
-                    <div>
+                <article class="col col-md-18 articles-container">
+                    <div class="article">
                         <h2 id="Whatistrading?">What is trading?</h2>
-                        <div>
+                        <div class="article-text-container">
                             <p>
                                 Trading is a fundamental economic concept that involves buying and selling assets. These can
                                 be goods and services, where the buyer pays the compensation to the seller. In other cases,
@@ -454,9 +452,9 @@
                         </div>
                     </div>
 
-                    <div>
-                        <h2 id="Whatisinvesting?">What is investing?</h2>
-                        <div>
+                    <div class="article">
+                        <h2 id="Whatisinvesting?" class="article-title">What is investing?</h2>
+                        <div class="article-text-container">
                             <p>
                                 Investing is allocating resources (such as capital) with the expectation of generating a
                                 profit. This can include using money to fund and kickstart a business or buying land with
@@ -479,9 +477,9 @@
                         </div>
                     </div>
 
-                    <div>
-                        <h2 id="Tradingvs.investing">Trading vs. investing – what’s the difference?</h2>
-                        <div>
+                    <div class="article">
+                        <h2 id="Tradingvs.investing" class="article-title">Trading vs. investing – what’s the difference?</h2>
+                        <div class="article-text-container">
                             <p>
                                 Both traders and investors seek to generate profits in the financial markets. Their methods
                                 to achieve this goal, however, are quite different.
@@ -505,9 +503,9 @@
                         </div>
                     </div>
 
-                    <div>
-                        <h2 id="Whatisfundamental">What is fundamental analysis (FA)?</h2>
-                        <div>
+                    <div class="article">
+                        <h2 id="Whatisfundamental" class="article-title">What is fundamental analysis (FA)?</h2>
+                        <div class="article-text-container">
                             <p>
                                 Fundamental analysis is a method for assessing a financial asset’s valuation. A fundamental
                                 analyst studies both economic and financial factors to determine if the value of an asset is
@@ -540,9 +538,9 @@
                         </div>
                     </div>
 
-                    <div>
-                        <h2 id="Whatistechnicalanalysis">What is technical analysis (TA)?</h2>
-                        <div>
+                    <div class="article">
+                        <h2 id="Whatistechnicalanalysis" class="article-title">What is technical analysis (TA)?</h2>
+                        <div class="article-text-container">
                             <p>
                                 Technical analysts work with a different approach. The core idea behind technical analysis is that historical price action may indicate how the market is likely to behave in the future.
                             </p>
@@ -558,9 +556,9 @@
                         </div>
                     </div>
 
-                    <div>
-                        <h2 id="Whatdrivesthefinancialmarkets?">What drives the financial markets?</h2>
-                        <div>
+                    <div class="article">
+                        <h2 id="Whatdrivesthefinancialmarkets?" class="article-title">What drives the financial markets?</h2>
+                        <div class="article-text-container">
                             <p>
                                 The price of an asset is simply determined by the balance of supply and demand. In other words, it’s decided by the buyers and sellers. Where supply meets demand, there’s a market. But what else can drive the value of a financial asset?
                             </p>
@@ -573,9 +571,9 @@
                         </div>
                     </div>
 
-                    <div>
-                        <h2 id="Whatisamarkettrend?">What is a market trend?</h2>
-                        <div>
+                    <div class="article">
+                        <h2 id="Whatisamarkettrend?" class="article-title">What is a market trend?</h2>
+                        <div class="article-text-container">
                             <p>
                                 A market trend is the overall direction where the price of an asset is going. In technical analysis, market trends are typically identified using price action, trend lines, or even key moving averages.
                             </p>
@@ -591,9 +589,9 @@
                         </div>
                     </div>
 
-                    <div>
-                        <h2 id="Whatisamarketcycle?">What is a market cycle?</h2>
-                        <div>
+                    <div class="article">
+                        <h2 id="Whatisamarketcycle?" class="article-title">What is a market cycle?</h2>
+                        <div class="article-text-container">
                             <p>
                                 You may have heard the phrase that “the market moves in cycles”. A cycle is a pattern or trend that emerges at different times. Typically, market cycles on higher time frames are more reliable than market cycles on lower time frames. Even so, you can eventually find small market cycles on an hourly chart just as you may do when looking at decades of data.
                             </p>
@@ -613,43 +611,45 @@
 
     </main>
 
-    <footer class="container-fluid">
-        <div class="row">
+    <footer>
+        <div class="container-fluid" id="about">
+            <div class="row">
 
-            <div class="col-12">
-                <ul class="footer-menu">
-                    <li>
-                        <a href="#">Market</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Help</a>
-                    </li>
-                    <li>
-                        <a href="#">Policy</a>
-                    </li>
-                </ul>
+                <div class="col-12">
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item">
+                            <a href="#">Market</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#">Help</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#">Policy</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="col-12">
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item">
+                            <a href="#">API</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#">Documentation</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#">Examples</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#">Terms</a>
+                        </li>
+                    </ul>
+                </div>
+    
             </div>
-
-            <div class="col-12">
-                <ul class="footer-menu">
-                    <li>
-                        <a href="#">API</a>
-                    </li>
-                    <li>
-                        <a href="#">Documentation</a>
-                    </li>
-                    <li>
-                        <a href="#">Examples</a>
-                    </li>
-                    <li>
-                        <a href="#">Terms</a>
-                    </li>
-                </ul>
-            </div>
-
         </div>
     </footer>
 </body>
