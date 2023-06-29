@@ -25,12 +25,17 @@ html{
 body{
     color: var(--main-bg-color);
     background-color: var(--text-color);
+    user-select: none;
 }
 
 a{
     color: inherit;
 }
 
-img{
-    user-select: none;
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
