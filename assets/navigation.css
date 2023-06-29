@@ -6,6 +6,7 @@
     padding: 10px 0;
     margin-bottom: 80px;
     border-bottom: 1px solid var(--sub-bg-color);
+    user-select: none;
 }
 
 .navbar>div{
@@ -126,11 +127,10 @@
     width: 100%;
 }
 
-#nav-brand-icon {
+#navBrandIcon {
     color: var(--btc-color);
     position: absolute;
     transform: rotate(-25deg);
-    filter: drop-shadow(0 0 2px var(--main-bg-color));
     clip-path: circle(50%);
     background-color: var(--main-bg-color);
 }

@@ -161,6 +161,7 @@ const init = () => {
   drawBlockChain();
   blockChainAnimate();
   addDragScroll();
+  themeControl();
 };
 const showDetails = (e) => {
   let symbol = e.value;
@@ -454,9 +455,20 @@ const autoStartStop = () => {
 const changeTheme = () => {
   let isDark = body.classList.toggle('dark')
   if (isDark){
+    localStorage.setItem('theme', 'dark')
     ball.style.right = 'unset'
     ball.style.left = '0px'
   }else{
+    localStorage.setItem('theme', 'light')
+    ball.style.left = 'unset'
+    ball.style.right = '0px'
+  }
+}
+const themeControl = () =>{
+  let theme = localStorage.getItem('theme')
+  theme ?? localStorage.setItem('theme', 'dark')
+  if (theme === 'light') {
+    body.classList.toggle('dark')
     ball.style.left = 'unset'
     ball.style.right = '0px'
   }
