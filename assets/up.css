@@ -1,0 +1,25 @@
+#upBtn{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 3.5em;
+    aspect-ratio: 1;
+    border: none;
+    background-color: transparent;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#upBtn>a{
+    text-decoration: none;
+}
+
+#upBtn>a>i{
+    vertical-align: middle;
+    display: inline;
+    position: relative;
+}
+
+#upBtn:hover{
+    color: var(--btc-color);
+}

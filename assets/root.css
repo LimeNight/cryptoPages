@@ -23,6 +23,7 @@ html{
 }
 
 body{
+    position: relative;
     color: var(--main-bg-color);
     background-color: var(--text-color);
     user-select: none;
